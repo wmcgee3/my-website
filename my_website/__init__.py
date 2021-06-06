@@ -1,9 +1,9 @@
-import flask
+from flask import Flask
 
 def create_app():
-    app = flask.Flask(__name__)
+    app = Flask(__name__)
 
-    from my_website.main.routes import main
+    from my_website.routes import main
 
     app.register_blueprint(main)
 

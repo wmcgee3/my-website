@@ -1,5 +1,5 @@
-import my_website
+from my_website import create_app
 
-app = my_website.create_app()
+app = create_app()
 
 app.run(debug=True)

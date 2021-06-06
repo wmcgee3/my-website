@@ -1,5 +1,16 @@
 {% extends 'base.html'%}
-
+{% set current_page = 'home' %}
 {% block content %}
-<h1 class="text-center">Home Page</h1>
+<h1 class="text-center">William McGee:</h1>
+<h2 class="text-center">Software Developer and Security Professional</h2>
+<div class="text-center my-5">
+    <img src="{{ url_for('static', filename='images/home.jpg') }}" alt="">
+</div>
+<p class="bigger">While serving as a Security Manager in the U.S. Army, William became an expert at physical, personnel, and
+    information security. Wanting to fill the gap in his knowledge, he decided to pursue the Cyber Security A.A.S. at
+    Columbus State. During his first two semesters of study, he realized that he had an affinity and passion for
+    programming and changed his major to pursue the Software Development A.A.S.</p>
+<p class="bigger">William is now taking more advanced programming courses and works as a tutor for introductory computer programming
+    courses. Planning to graduate in December 2020, William is looking forward to a career of developing creative
+    software solutions to real world problems.</p>
 {% endblock %}

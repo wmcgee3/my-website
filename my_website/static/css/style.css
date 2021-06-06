@@ -1,0 +1,30 @@
+.bigger {
+  font-size: 1.25rem;
+}
+
+.bg-darker {
+  background-color: #232526;
+}
+
+.bg-darkest {
+  background-color: #18191a;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+  }
+  body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+  }
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+  }

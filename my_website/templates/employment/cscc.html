@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% set current_page = 'employment-cscc' %}
+{% block content%}
+<h1 class="text-center">Employment at Columbus State Community College</h1>
+<div class="text-center my-5">
+    <img src="{{ url_for('static', filename='images/employ-cscc.jpg') }}" alt="">
+</div>
+<p class="bigger">With the recommendation of two of his instructors, William was hired as a Peer Tutor for Computer Science courses at
+    Columbus State Community College. He currently only tutors for introductory Computer Science courses, but he looks
+    forward to tutoring students in more advanced programming courses in the future.</p>
+<p class="bigger">William plans to continue tutoring Computer Science students after graduating from Columbus State and is considering
+    pursuing a master's degree so he can moonlight as an adjunct instructor for programming courses.</p>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% set current_page = 'education-cscc' %}
+{% block content %}
+<h1 class="text-center">Studies at Columbus State Community College</h1>
+<div class="text-center my-5">
+    <img src="{{ url_for('static', filename='images/edu-cscc.jpg') }}" alt="">
+</div>
+<p class="bigger">William McGee began studying at CSCC in January of 2019 pursuing an Associate's of Applied Science in Cybersecurity.
+    After two semesters of studying Cybersecurity, William decided to change his major and pursue the Software Developer
+    Associate's of Applied Science. Fortunately, nearly all of the classes that he completed in his first two semesters
+    counted towards his new major of study. Below are the courses that William has completed in pursuit of his degree.</p>
+{% endblock %}
