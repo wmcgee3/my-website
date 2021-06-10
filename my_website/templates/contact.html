@@ -1,6 +1,16 @@
 {% extends 'base.html'%}
 {% set current_page = 'contact' %}
 {% block content %}
-<h1 class="text-center">Other websites</h1>
-
+<h1 class="text-center">Check These Out</h1>
+<div class="col-lg-6 mx-auto text-center">
+    <a href="https://www.linkedin.com/in/william-mcgee3/" target="_blank">
+        <img src="{{ url_for('static', filename='images/Linkedin-Logo.png') }}" alt="Linked in logo">
+    </a>
+    <a href="https://jenkins.wmcgee.tech" target="_blank">
+        <img class="mb-5" src="{{ url_for('static', filename='images/Jenkins-Logo.png') }}" alt="Jenkins logo" height="400px">
+    </a>
+    <a href="https://github.com/wmcgee3" target="_blank">
+        <img class="mt-5" src="{{ url_for('static', filename='images/GitHub-Logo.png') }}" alt="Jenkins logo">
+    </a>
+</div>
 {% endblock %}
