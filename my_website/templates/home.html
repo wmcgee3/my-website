@@ -16,11 +16,19 @@
     graduated in December 2020. After graduating, I was hired on full-time at Nationwide and I now work on the mainframe
     team.</p>
 <h2 class="mt-5 text-center">About This Website</h2>
-<div class='text-center'>
-    <img class="mx-5 my-5 col-sm-4" src="{{ url_for('static', filename='images/Python-Logo.png') }}"
-        alt="Python programming language logo">
-    <img class="mx-5 my-5 col-sm-4" src="{{ url_for('static', filename='images/Flask-Logo.png') }}"
-        alt="Flask Python package logo">
+<div class='row my-5'>
+    <div class="col-sm my-auto">
+        <img class="img-fluid p-5" src="{{ url_for('static', filename='images/Python-Logo.png') }}"
+            alt="Python programming language logo">
+    </div>
+    <div class="col-sm my-auto">
+        <img class="img-fluid p-5" src="{{ url_for('static', filename='images/Flask-Logo.png') }}"
+            alt="Flask Python package logo">
+    </div>
+    <div class="col-sm my-auto">
+        <img class="img-fluid p-5" src="{{ url_for('static', filename='images/Bootstrap-Logo.png') }}"
+            alt="Bootstrap logo">
+    </div>
 </div>
 <p>This website was made using Python, Flask, and Bootstrap 4. Why use Python to create a static website? Because I hate
     having to copy & paste navigation and style stuff to every page, and Jinja2 takes care of that for me with its
