@@ -19,7 +19,9 @@
         <header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-darkest border-dark">
                 <div class="container">
-                    <a class="navbar-brand" href="{{ url_for('main.home') }}">wmcgee.tech</a>
+                    <a class="navbar-brand" href="{{ url_for('main.home') }}">
+                        <img src="{{ url_for('static', filename='images/WM-Logo.png') }}" height="30" width="70" alt="W M">
+                    </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
