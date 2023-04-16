@@ -3,6 +3,7 @@ use yew_router::prelude::*;
 
 use crate::education;
 use crate::employment;
+use crate::home;
 
 mod dropdown;
 
@@ -32,14 +33,7 @@ pub(crate) enum Route {
 
 pub(crate) fn switch(route: Route) -> Html {
     match route {
-        Route::Home => html! {
-            <>
-                <h1 class="text-center">{"Home"}</h1>
-                <div class="text-center">
-                    <img src="img/home.jpg" alt="" style="max-width: 100%;" />
-                </div>
-            </>
-        },
+        Route::Home => html! { <home::Home /> },
         Route::EducationFranklin => html! { <education::Franklin /> },
         Route::EducationCscc => html! { <education::Cscc /> },
         Route::EducationDliflc => html! { <education::Dliflc /> },

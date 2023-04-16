@@ -4,6 +4,7 @@ use yew_router::prelude::*;
 mod education;
 mod employment;
 mod footer;
+mod home;
 mod navigation;
 
 use footer::Footer;
