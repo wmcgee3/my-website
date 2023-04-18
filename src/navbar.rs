@@ -33,135 +33,148 @@ pub(crate) fn Navbar(cx: Scope) -> impl IntoView {
         set_show_employment.update(|value| *value = false);
     };
 
-    view! {
-            cx,
-            <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="/" exact=true on:click=hide_all_nav>
-                        "wmcgee.tech"
-                    </a>
-                    <button
-                        class="navbar-toggler"
-                        on:click=toggle_show_nav
-                        type="button"
-                        aria-controls="navbarNavDropdown"
-                        aria-expanded=format!("{:?}", show_nav)
-                        aria-label="Toggle navigation"
-                    >
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div
-                        class:show=move || show_nav.get()
-                        class="collapse navbar-collapse"
-                        id="navbarNavDropdown"
-                    >
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a
-                                    class="nav-link"
-                                    class:active=move || pathname.get() == ("/")
-                                    href="/"
-                                    on:click=hide_all_nav
-                                    aria-active=move || if pathname.get() == ("/") { Some("page") } else { None }
-                                >
-                                    "Home"
-                                </a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a
-                                    class="nav-link dropdown-toggle"
-                                    class:active=move || pathname.get().starts_with("/education")
-                                    href="#"
-                                    on:click=toggle_show_education
-                                    aria-active=move || if pathname.get().starts_with("/education") { Some("page") } else { None }
-                                >
-                                    "Education"
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-dark" class:show=is_show_education>
-                                    <li>
-                                        <a
-                                            class="dropdown-item"
-                                            class:active=move || pathname.get().starts_with("/education/franklin")
-                                            href="/education/franklin"
-                                            on:click=hide_all_nav
-                                            aria-active=move || if pathname.get().starts_with("/education/franklin") { Some("page") } else { None }
-                                        >
-                                            "Franklin"
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a
-                                            class="dropdown-item"
-                                            class:active=move || pathname.get().starts_with("/education/cscc")
-                                            href="/education/cscc"
-                                            on:click=hide_all_nav
-                                            aria-active=move || if pathname.get().starts_with("/education/cscc") { Some("page") } else { None }
-                                        >
-                                            "CSCC"
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a
-                                            class="dropdown-item"
-                                            class:active=move || pathname.get().starts_with("/education/dliflc")
-                                            href="/education/dliflc"
-                                            on:click=hide_all_nav
-                                            aria-active=move || if pathname.get().starts_with("/education/dliflc") { Some("page") } else { None }
-                                        >
-                                            "DLI-FLC"
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a
-                                    class="nav-link dropdown-toggle"
-                                    class:active=move || pathname.get().starts_with("/employment")
-                                    href="#"
-                                    on:click=toggle_show_employment
-                                    aria-active=move || if pathname.get().starts_with("/employment") { Some("page") } else { None }
-                                >
-                                    "Employment"
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-dark" class:show=is_show_employment>
-                                    <li>
-                                        <a
-                                            class="dropdown-item"
-                                            class:active=move || pathname.get().starts_with("/employment/nationwide")
-                                            href="/employment/nationwide"
-                                            on:click=hide_all_nav
-                                            aria-active=move || if pathname.get().starts_with("/employment/nationwide") { Some("page") } else { None }
-                                        >
-                                            "Nationwide"
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a
-                                            class="dropdown-item"
-                                            class:active=move || pathname.get().starts_with("/employment/cscc")
-                                            href="/employment/cscc"
-                                            on:click=hide_all_nav
-                                            aria-active=move || if pathname.get().starts_with("/employment/cscc") { Some("page") } else { None }
-                                        >
-                                            "CSCC"
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a
-                                            class="dropdown-item"
-                                            class:active=move || pathname.get().starts_with("/employment/army")
-                                            href="/employment/army"
-                                            on:click=hide_all_nav
-                                            aria-active=move || if pathname.get().starts_with("/employment/army") { Some("page") } else { None }
-                                        >
-                                            "U.S. Army"
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+    view! { cx,
+        <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/" exact=true on:click=hide_all_nav>
+                    "wmcgee.tech"
+                </a>
+                <button
+                    class="navbar-toggler"
+                    on:click=toggle_show_nav
+                    type="button"
+                    aria-controls="navbarNavDropdown"
+                    aria-expanded=format!("{:?}", show_nav)
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div
+                    class:show=move || show_nav.get()
+                    class="collapse navbar-collapse"
+                    id="navbarNavDropdown"
+                >
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                class:active=move || pathname.get() == ("/")
+                                href="/"
+                                on:click=hide_all_nav
+                                aria-active=move || if pathname.get() == ("/") { Some("page") } else { None }
+                            >
+                                "Home"
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link dropdown-toggle"
+                                class:active=move || pathname.get().starts_with("/education")
+                                href="#"
+                                on:click=toggle_show_education
+                                aria-active=move || if pathname.get().starts_with("/education") { Some("page") } else { None }
+                            >
+                                "Education"
+                            </a>
+                            <ul
+                                class="dropdown-menu dropdown-menu-dark"
+                                class:show=is_show_education
+                            >
+                                <li>
+                                    <a
+                                        class="dropdown-item"
+                                        class:active=move || pathname.get().starts_with("/education/franklin")
+                                        href="/education/franklin"
+                                        on:click=hide_all_nav
+                                        aria-active=move || {
+                                            if pathname.get().starts_with("/education/franklin") { Some("page") } else { None }
+                                        }
+                                    >
+                                        "Franklin"
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        class="dropdown-item"
+                                        class:active=move || pathname.get().starts_with("/education/cscc")
+                                        href="/education/cscc"
+                                        on:click=hide_all_nav
+                                        aria-active=move || if pathname.get().starts_with("/education/cscc") { Some("page") } else { None }
+                                    >
+                                        "CSCC"
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        class="dropdown-item"
+                                        class:active=move || pathname.get().starts_with("/education/dliflc")
+                                        href="/education/dliflc"
+                                        on:click=hide_all_nav
+                                        aria-active=move || if pathname.get().starts_with("/education/dliflc") { Some("page") } else { None }
+                                    >
+                                        "DLI-FLC"
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link dropdown-toggle"
+                                class:active=move || pathname.get().starts_with("/employment")
+                                href="#"
+                                on:click=toggle_show_employment
+                                aria-active=move || if pathname.get().starts_with("/employment") { Some("page") } else { None }
+                            >
+                                "Employment"
+                            </a>
+                            <ul
+                                class="dropdown-menu dropdown-menu-dark"
+                                class:show=is_show_employment
+                            >
+                                <li>
+                                    <a
+                                        class="dropdown-item"
+                                        class:active=move || pathname.get().starts_with("/employment/nationwide")
+                                        href="/employment/nationwide"
+                                        on:click=hide_all_nav
+                                        aria-active=move || {
+                                            if pathname.get().starts_with("/employment/nationwide") {
+                                                Some("page")
+                                            } else {
+                                                None
+                                            }
+                                        }
+                                    >
+                                        "Nationwide"
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        class="dropdown-item"
+                                        class:active=move || pathname.get().starts_with("/employment/cscc")
+                                        href="/employment/cscc"
+                                        on:click=hide_all_nav
+                                        aria-active=move || if pathname.get().starts_with("/employment/cscc") { Some("page") } else { None }
+                                    >
+                                        "CSCC"
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        class="dropdown-item"
+                                        class:active=move || pathname.get().starts_with("/employment/army")
+                                        href="/employment/army"
+                                        on:click=hide_all_nav
+                                        aria-active=move || if pathname.get().starts_with("/employment/army") { Some("page") } else { None }
+                                    >
+                                        "U.S. Army"
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
-            </nav>
+            </div>
+        </nav>
     }
 }

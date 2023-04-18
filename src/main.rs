@@ -17,51 +17,66 @@ use not_found::*;
 
 fn main() {
     mount_to_body(|cx| {
-        view! {
-            cx,
+        view! { cx,
             <Router>
                 <header>
-                    <Navbar />
+                    <Navbar/>
                 </header>
                 <main>
                     <div class="container my-4">
                         <Routes>
                             <Route
                                 path="/"
-                                view=move |cx| view! { cx, <Home /> }
+                                view=move |cx| {
+                                    view! { cx, <Home/> }
+                                }
                             />
                             <Route
                                 path="/education/franklin"
-                                view=move |cx| view! { cx, <EducationFranklin /> }
+                                view=move |cx| {
+                                    view! { cx, <EducationFranklin/> }
+                                }
                             />
                             <Route
                                 path="/education/cscc"
-                                view=move |cx| view! { cx, <EducationCscc /> }
+                                view=move |cx| {
+                                    view! { cx, <EducationCscc/> }
+                                }
                             />
                             <Route
                                 path="/education/dliflc"
-                                view=move |cx| view! { cx, <EducationDliflc /> }
+                                view=move |cx| {
+                                    view! { cx, <EducationDliflc/> }
+                                }
                             />
                             <Route
                                 path="/employment/nationwide"
-                                view=move |cx| view! { cx, <EmploymentNationwide /> }
+                                view=move |cx| {
+                                    view! { cx, <EmploymentNationwide/> }
+                                }
                             />
                             <Route
                                 path="/employment/cscc"
-                                view=move |cx| view! { cx, <EmploymentCscc /> }
+                                view=move |cx| {
+                                    view! { cx, <EmploymentCscc/> }
+                                }
                             />
                             <Route
                                 path="/employment/army"
-                                view=move |cx| view! { cx, <EmploymentArmy /> }
+                                view=move |cx| {
+                                    view! { cx, <EmploymentArmy/> }
+                                }
                             />
                             <Route
                                 path="*"
-                                view=move |cx| view! { cx, <NotFound /> }
+                                view=move |cx| {
+                                    view! { cx, <NotFound/> }
+                                }
                             />
                         </Routes>
                     </div>
                 </main>
-                <Footer />
+                <Footer/>
             </Router>
         }
     })

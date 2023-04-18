@@ -2,8 +2,7 @@ use leptos::*;
 
 #[component]
 pub(crate) fn Footer(cx: Scope) -> impl IntoView {
-    view! {
-        cx,
+    view! { cx,
         <footer class="bg-dark text-center text-white">
             <div class="container p-4 pb-0">
                 <section class="mb-4">
@@ -27,7 +26,9 @@ pub(crate) fn Footer(cx: Scope) -> impl IntoView {
             </div>
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
                 "© 2023 Copyright: "
-                <a class="text-white" href="https://wmcgee.tech/">"wmcgee.tech"</a>
+                <a class="text-white" href="https://wmcgee.tech/">
+                    "wmcgee.tech"
+                </a>
             </div>
         </footer>
     }
