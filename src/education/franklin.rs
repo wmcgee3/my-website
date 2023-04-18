@@ -1,13 +1,12 @@
-use yew::prelude::*;
+use leptos::*;
 
-#[function_component]
-pub(crate) fn Franklin() -> Html {
-    html! {
-        <>
-            <h1 class="text-center">{"Education at Franklin"}</h1>
-            <div class="my-5 text-center">
-                <img src="/img/education-franklin.jpg" alt="" style="max-width: 100%" />
-            </div>
-        </>
+#[component]
+pub(crate) fn EducationFranklin(cx: Scope) -> impl IntoView {
+    view! {
+        cx,
+        <h1 class="text-center">"Franklin University"</h1>
+        <div class="my-4 text-center">
+            <img src="../img/education-franklin.jpg" style="max-width: 100%;" />
+        </div>
     }
 }
