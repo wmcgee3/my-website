@@ -5,7 +5,7 @@ pub(crate) fn EducationDliflc(cx: Scope) -> impl IntoView {
     view! { cx,
         <h1 class="text-center">"DLI-FLC"</h1>
         <div class="my-4 text-center">
-            <img src="../img/education-dliflc.jpg" style="max-width: 100%;"/>
+            <img src="../public/img/education-dliflc.jpg" style="max-width: 100%;"/>
         </div>
         <p>
             "After serving as a medic in the U.S. Army for four years, I volunteered to change my job and become an intelligence analyst.

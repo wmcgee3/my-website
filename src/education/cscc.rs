@@ -5,7 +5,7 @@ pub(crate) fn EducationCscc(cx: Scope) -> impl IntoView {
     view! { cx,
         <h1 class="text-center">"CSCC"</h1>
         <div class="my-4 text-center">
-            <img src="../img/education-cscc.jpg" style="max-width: 100%;"/>
+            <img src="../public/img/education-cscc.jpg" style="max-width: 100%;"/>
         </div>
         <p>
             "I began pursuing an Associate's of Applied Science in Cybersecurity at CSCC in January of 2019.

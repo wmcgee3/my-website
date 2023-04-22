@@ -36,7 +36,7 @@ pub(crate) fn Navbar(cx: Scope) -> impl IntoView {
     view! { cx,
         <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/" exact=true on:click=hide_all_nav>
+                <a class="navbar-brand" href="/" on:click=hide_all_nav>
                     "wmcgee.tech"
                 </a>
                 <button
@@ -44,7 +44,7 @@ pub(crate) fn Navbar(cx: Scope) -> impl IntoView {
                     on:click=toggle_show_nav
                     type="button"
                     aria-controls="navbarNavDropdown"
-                    aria-expanded=format!("{:?}", show_nav)
+                    aria-expanded=move || if show_nav() { "true" } else { "false" }
                     aria-label="Toggle navigation"
                 >
                     <span class="navbar-toggler-icon"></span>
@@ -58,21 +58,21 @@ pub(crate) fn Navbar(cx: Scope) -> impl IntoView {
                         <li class="nav-item">
                             <a
                                 class="nav-link"
-                                class:active=move || pathname() == ("/")
+                                class:active=move || pathname().eq("/")
                                 href="/"
                                 on:click=hide_all_nav
-                                aria-active=move || if pathname() == ("/") { Some("page") } else { None }
+                                aria-active=move || pathname().eq("/").then_some("page")
                             >
                                 "Home"
                             </a>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown dropdown-dark">
                             <a
                                 class="nav-link dropdown-toggle"
                                 class:active=move || pathname().starts_with("/education")
                                 href="#"
                                 on:click=toggle_show_education
-                                aria-active=move || if pathname().starts_with("/education") { Some("page") } else { None }
+                                aria-active=move || pathname().starts_with("/education").then_some("page")
                             >
                                 "Education"
                             </a>
@@ -86,9 +86,7 @@ pub(crate) fn Navbar(cx: Scope) -> impl IntoView {
                                         class:active=move || pathname().starts_with("/education/franklin")
                                         href="/education/franklin"
                                         on:click=hide_all_nav
-                                        aria-active=move || {
-                                            if pathname().starts_with("/education/franklin") { Some("page") } else { None }
-                                        }
+                                        aria-active=move || pathname().starts_with("/education/franklin").then_some("page")
                                     >
                                         "Franklin"
                                     </a>
@@ -99,7 +97,7 @@ pub(crate) fn Navbar(cx: Scope) -> impl IntoView {
                                         class:active=move || pathname().starts_with("/education/cscc")
                                         href="/education/cscc"
                                         on:click=hide_all_nav
-                                        aria-active=move || if pathname().starts_with("/education/cscc") { Some("page") } else { None }
+                                        aria-active=move || pathname().starts_with("/education/cscc").then_some("page")
                                     >
                                         "CSCC"
                                     </a>
@@ -110,20 +108,20 @@ pub(crate) fn Navbar(cx: Scope) -> impl IntoView {
                                         class:active=move || pathname().starts_with("/education/dliflc")
                                         href="/education/dliflc"
                                         on:click=hide_all_nav
-                                        aria-active=move || if pathname().starts_with("/education/dliflc") { Some("page") } else { None }
+                                        aria-active=move || pathname().starts_with("/education/dliflc").then_some("page")
                                     >
                                         "DLI-FLC"
                                     </a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown dropdown-dark">
                             <a
                                 class="nav-link dropdown-toggle"
                                 class:active=move || pathname().starts_with("/employment")
                                 href="#"
                                 on:click=toggle_show_employment
-                                aria-active=move || if pathname().starts_with("/employment") { Some("page") } else { None }
+                                aria-active=move || pathname().starts_with("/employment").then_some("page")
                             >
                                 "Employment"
                             </a>
@@ -137,13 +135,7 @@ pub(crate) fn Navbar(cx: Scope) -> impl IntoView {
                                         class:active=move || pathname().starts_with("/employment/nationwide")
                                         href="/employment/nationwide"
                                         on:click=hide_all_nav
-                                        aria-active=move || {
-                                            if pathname().starts_with("/employment/nationwide") {
-                                                Some("page")
-                                            } else {
-                                                None
-                                            }
-                                        }
+                                        aria-active=move || pathname().starts_with("/employment/nationwide").then_some("page")
                                     >
                                         "Nationwide"
                                     </a>
@@ -154,7 +146,7 @@ pub(crate) fn Navbar(cx: Scope) -> impl IntoView {
                                         class:active=move || pathname().starts_with("/employment/cscc")
                                         href="/employment/cscc"
                                         on:click=hide_all_nav
-                                        aria-active=move || if pathname().starts_with("/employment/cscc") { Some("page") } else { None }
+                                        aria-active=move || pathname().starts_with("/employment/cscc").then_some("page")
                                     >
                                         "CSCC"
                                     </a>
@@ -165,7 +157,7 @@ pub(crate) fn Navbar(cx: Scope) -> impl IntoView {
                                         class:active=move || pathname().starts_with("/employment/army")
                                         href="/employment/army"
                                         on:click=hide_all_nav
-                                        aria-active=move || if pathname().starts_with("/employment/army") { Some("page") } else { None }
+                                        aria-active=move || pathname().starts_with("/employment/army").then_some("page")
                                     >
                                         "U.S. Army"
                                     </a>

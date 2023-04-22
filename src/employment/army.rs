@@ -5,7 +5,7 @@ pub(crate) fn EmploymentArmy(cx: Scope) -> impl IntoView {
     view! { cx,
         <h1 class="text-center">"U.S. Army"</h1>
         <div class="my-4 text-center">
-            <img src="../img/employment-army.jpg" style="max-width: 100%;"/>
+            <img src="../public/img/employment-army.jpg" style="max-width: 100%;"/>
         </div>
         <p>
             "I enlisted in the United States Army in February of 2009.

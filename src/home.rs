@@ -5,7 +5,7 @@ pub(crate) fn Home(cx: Scope) -> impl IntoView {
     view! { cx,
         <h1 class="text-center">"Home"</h1>
         <div class="my-4 text-center">
-            <img src="img/home-portrait.jpg" style="max-width: 100%;"/>
+            <img src="public/img/home-portrait.jpg" style="max-width: 100%;"/>
         </div>
         <p>
             "While serving as a Security Manager in the U.S. Army, I learned a ton about physical, personnel, and information security.
@@ -18,7 +18,7 @@ pub(crate) fn Home(cx: Scope) -> impl IntoView {
             I was hired to the mainframe team at Nationwide after graduating."
         </p>
         <div class="my-4 text-center">
-            <img src="img/home-leptos.svg" style="background-color: lightgrey; max-width: 600px;"/>
+            <img src="public/img/home-leptos.svg" style="background-color: lightgrey; max-width: 600px;"/>
         </div>
         <p>"This website was created using the Leptos framework."</p>
     }

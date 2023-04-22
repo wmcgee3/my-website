@@ -16,7 +16,7 @@ pub(crate) fn Footer(cx: Scope) -> impl IntoView {
                     </a>
                     <a
                         class="btn btn-outline-light btn-floating m-1"
-                        href="https://github.com/wmcgee3"
+                        href="https://github.com/wmcgee3/my-website"
                         role="button"
                         target="_blank"
                     >

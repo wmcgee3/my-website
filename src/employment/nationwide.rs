@@ -5,7 +5,7 @@ pub(crate) fn EmploymentNationwide(cx: Scope) -> impl IntoView {
     view! { cx,
         <h1 class="text-center">"Nationwide"</h1>
         <div class="my-4 text-center">
-            <img src="../img/employment-nationwide.jpg" style="max-width: 100%;"/>
+            <img src="../public/img/employment-nationwide.jpg" style="max-width: 100%;"/>
         </div>
         <p>
             "I'm a proud Nationwider and member of the mainframe team.
